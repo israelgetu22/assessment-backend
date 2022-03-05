@@ -63,4 +63,26 @@ app.post("/api/name", (req, res) => {
   res.status(200).send(users);
 });
 
+app.delete("/api/delete/:index", (req, res) => {
+  console.log(req.params);
+
+  if (+req.params.index) {
+    users.splice(+req.params.index, 1);
+    res.status(200).send(users);
+  } else {
+    res.status(400).send("Don't have a number");
+  }
+});
+app.put("/api/edit/:Israel", (req, res) => {
+  console.log(req.params);
+  console.log(req.body);
+
+  const { nameChange } = req.body;
+  const editIndex = +req.params.id;
+
+  users[editIndex] = nameChange;
+
+  res.status(200).send(users);
+});
+
 app.listen(4000, () => console.log("Server running on 4000"));
