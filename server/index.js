@@ -14,15 +14,6 @@ app.get("/api/compliment", (req, res) => {
     "Your Javascript skills are stellar.",
   ];
 
-  app.get("/api/compliment", (req, res) => {
-    const compliments = [
-      "A beautiful, smart, and loving person will be coming into your life",
-      "A dubious friend may be an enemy in camouflage. ",
-      "Courtesy begins in the home",
-      "Emulate what you respect in your friends.",
-      "Fear and desire two sides of the same coin."
-    ];
-
   // choose random compliment
   let randomIndex = Math.floor(Math.random() * compliments.length);
   let randomCompliment = compliments[randomIndex];
@@ -30,19 +21,33 @@ app.get("/api/compliment", (req, res) => {
   res.status(200).send(randomCompliment);
 });
 
-app.listen(4000, () => console.log("Server running on 4000"));
+app.get("/api/fortune", (req, res) => {
+  const fortunes = [
+    "A soft voice may be awfully persuasive.",
+    "Competence like yours is underrated.",
+    "Happy life is just in front of you.",
+    "How you look depends on where you go.",
+  ];
 
+  // choose random compliment
+  let randomIndex = Math.floor(Math.random() * fortunes.length);
+  let randomFortunes = fortunes[randomIndex];
 
-const quotes  = [
-  "The purpose of our lives is to be happy",
-  " Get busy living or get busy dying",
-  "If you want to live a happy life, tie it to a goal, not to people or things.",
-  "Money and success don’t change people; they merely amplify what is already there.",
-];
-
-app.get("/api/quotes/compliment/quotes", (req, res) => {
-  console.log(req.query);
- 
-    res.status(200).send(quotes);
-  }
+  res.status(200).send(randomFortunes);
 });
+
+app.get("/api/quote", (req, res) => {
+  const quotes = [
+    "Be yourself; everyone else is already taken.",
+    "Do not let what you cannot do interfere with what you can do.",
+    "A journey of a thousand leagues begins beneath one’s feet.",
+  ];
+
+  // choose random compliment
+  let randomIndex = Math.floor(Math.random() * quotes.length);
+  let randomQuotes = quotes[randomIndex];
+
+  res.status(200).send(randomQuotes);
+});
+
+app.listen(4000, () => console.log("Server running on 4000"));
