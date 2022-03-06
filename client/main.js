@@ -66,7 +66,7 @@ function delName() {
 
 function editName() {
   const nameChange = newNameInput.value;
-  const indexChange = newNameInput.value;
+  const indexChange = newNameIndex.value;
 
   const body = {
     nameChange,
@@ -74,7 +74,7 @@ function editName() {
   axios
     .put(`http://localhost:4000/api/edit/${indexChange}`, body)
     .then((res) => {
-      alert(`Your users array now contain ${res.data}`);
+      alert(`Your users array now contains ${res.data}`);
       console.log(res.data);
     })
     .catch((err) => {

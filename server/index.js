@@ -73,14 +73,14 @@ app.delete("/api/delete/:index", (req, res) => {
     res.status(400).send("Don't have a number");
   }
 });
-app.put("/api/edit/:Israel", (req, res) => {
+app.put("/api/edit/:id", (req, res) => {
   console.log(req.params);
   console.log(req.body);
 
   const { nameChange } = req.body;
   const editIndex = +req.params.id;
 
-  users[editIndex] = nameChange;
+  users[editIndex] = editIndex;
 
   res.status(200).send(users);
 });
