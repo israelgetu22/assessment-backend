@@ -7,7 +7,7 @@ document.getElementById("complimentButton").onclick = function () {
 
 //Grabbing
 const fortuneBtn = document.getElementById("fortuneButton");
-const quoteBtn = document.getElementById("qouteBtn");
+const quoteBtn = document.getElementById("quoteBtn");
 
 const nameInput = document.getElementById("nameInput");
 const nameBtn = document.getElementById("nameButton");

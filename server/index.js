@@ -80,7 +80,7 @@ app.put("/api/edit/:id", (req, res) => {
   const { nameChange } = req.body;
   const editIndex = +req.params.id;
 
-  users[editIndex] = editIndex;
+  users[editIndex] = nameChange;
 
   res.status(200).send(users);
 });
