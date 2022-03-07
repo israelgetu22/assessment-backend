@@ -16,7 +16,7 @@ const indexInput = document.getElementById("indexInput");
 const indexButton = document.getElementById("indexBtn");
 
 const form = document.querySelector("form");
-const newNameInput = document.getAnimations("newNameInput");
+const newNameInput = document.getElementById("newNameInput");
 const newNameIndex = document.getElementById("newNameIndex");
 const submitForm = document.getElementById("submitForm");
 
@@ -71,6 +71,8 @@ function editName() {
   const body = {
     nameChange,
   };
+  console.log(body);
+  console.log(nameChange);
   axios
     .put(`http://localhost:4000/api/edit/${indexChange}`, body)
     .then((res) => {
